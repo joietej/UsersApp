@@ -21,8 +21,7 @@ struct UserDetails : View {
         VStack {
             
             if isLoading {
-                Text("fetching repos").bold().font(.title)
-                ProgressView()
+                ProgressView("fetching repos...").font(.title)
             }
             else {
                 Text(user.login).bold().font(.title)
@@ -30,7 +29,7 @@ struct UserDetails : View {
                     HStack {
                         Text(repo.name).bold()
                         Spacer()
-                        Image(systemName: "star.fill")
+                        Image(systemName: "star.fill").foregroundColor(.yellow)
                         Text("\(repo.stargazers_count)")
                     }
                 }

@@ -16,7 +16,7 @@ struct ContentView: View {
     
     var users : [User] {
         store.users.filter { user in
-            userSearchString == "" ? true : user.login.contains(userSearchString)
+            userSearchString == "" ? true : user.login.contains(userSearchString.lowercased())
         }
     }
     

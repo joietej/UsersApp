@@ -31,3 +31,9 @@ struct UserRow : View {
         }
     }
 }
+
+struct UserRow_Previews: PreviewProvider {
+    static var previews: some View {
+        UserRow(user: User(id: 1, login: "foowdewvded", avatar_url: "https://avatars.githubusercontent.com/u/1?v=4", repos_url: ""))
+    }
+}
