@@ -12,16 +12,24 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var store: UserStore
+    @State private var userSearchString = ""
+    
+    var users : [User] {
+        store.users.filter { user in
+            userSearchString == "" ? true : user.login.contains(userSearchString)
+        }
+    }
     
     var body: some View {
         NavigationView {
-            List(store.users,id:\.id){user in
+            List(users,id:\.id){user in
                 NavigationLink {
                     UserDetails(user: user)
                 } label: {
                     UserRow(user: user)
                 }
             }
+            .searchable(text: $userSearchString)
             .task {
                 await store.loadUsers()
             }.navigationTitle("People").refreshable {
