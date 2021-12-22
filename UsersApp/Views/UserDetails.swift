@@ -1,0 +1,44 @@
+//
+//  UserDetails.swift
+//  FooApp
+//
+//  Created by Tejas Sahasrabudhe on 22/12/21.
+//
+import SwiftUI
+
+struct UserDetails : View {
+    @State private var isLoading =  false
+    
+    @EnvironmentObject var store: UserStore
+    
+    var user : User
+    
+    private var repos: [Repo] {
+        return store.repos.keys.contains(user.id) ? store.repos[user.id]! : [Repo]()
+    }
+    
+    var body: some View {
+        VStack {
+            
+            if isLoading {
+                Text("fetching repos").bold().font(.title)
+                ProgressView()
+            }
+            else {
+                Text(user.login).bold().font(.title)
+                List(repos, id: \.id){ repo in
+                    HStack {
+                        Text(repo.name).bold()
+                        Spacer()
+                        Image(systemName: "star.fill")
+                        Text("\(repo.stargazers_count)")
+                    }
+                }
+            }
+        }.task {
+            isLoading = true
+            await store.loadRepos(user: user)
+            isLoading = false
+        }
+    }
+}
