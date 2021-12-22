@@ -13,6 +13,9 @@
 		96740ECA2772F22F0089A886 /* UsersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96740EC92772F22F0089A886 /* UsersApp.swift */; };
 		968755872770FD30005FB927 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968755862770FD30005FB927 /* User.swift */; };
 		968EC70927719F1D00C69858 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968EC70827719F1D00C69858 /* Api.swift */; };
+		969C530827735C8A001837B6 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C530727735C8A001837B6 /* UserList.swift */; };
+		969C530A2773A992001837B6 /* UserGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C53092773A992001837B6 /* UserGrid.swift */; };
+		969C530C2773AADA001837B6 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C530B2773AADA001837B6 /* Avatar.swift */; };
 		96C31DF9273525A1000C4BDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C31DF8273525A1000C4BDB /* ContentView.swift */; };
 		96C31DFB273525A2000C4BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C31DFA273525A2000C4BDB /* Assets.xcassets */; };
 		96C31DFE273525A2000C4BDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C31DFD273525A2000C4BDB /* Preview Assets.xcassets */; };
@@ -45,6 +48,9 @@
 		96740EC92772F22F0089A886 /* UsersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersApp.swift; sourceTree = "<group>"; };
 		968755862770FD30005FB927 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		968EC70827719F1D00C69858 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		969C530727735C8A001837B6 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		969C53092773A992001837B6 /* UserGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGrid.swift; sourceTree = "<group>"; };
+		969C530B2773AADA001837B6 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		96C31DF3273525A1000C4BDB /* UsersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C31DF8273525A1000C4BDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		96C31DFA273525A2000C4BDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +93,9 @@
 				96C31DF8273525A1000C4BDB /* ContentView.swift */,
 				96740EC22772E7E30089A886 /* UserDetails.swift */,
 				96740EC42772E82D0089A886 /* UserRow.swift */,
+				969C530727735C8A001837B6 /* UserList.swift */,
+				969C53092773A992001837B6 /* UserGrid.swift */,
+				969C530B2773AADA001837B6 /* Avatar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,10 +315,13 @@
 			files = (
 				968755872770FD30005FB927 /* User.swift in Sources */,
 				96740EC02772E59E0089A886 /* UserStore.swift in Sources */,
+				969C530A2773A992001837B6 /* UserGrid.swift in Sources */,
 				96740ECA2772F22F0089A886 /* UsersApp.swift in Sources */,
 				96C31DF9273525A1000C4BDB /* ContentView.swift in Sources */,
+				969C530827735C8A001837B6 /* UserList.swift in Sources */,
 				968EC70927719F1D00C69858 /* Api.swift in Sources */,
 				96740EC52772E82D0089A886 /* UserRow.swift in Sources */,
+				969C530C2773AADA001837B6 /* Avatar.swift in Sources */,
 				96740EC32772E7E30089A886 /* UserDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

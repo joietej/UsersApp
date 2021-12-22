@@ -11,29 +11,33 @@ struct UserRow : View {
     var user : User
     var body: some View {
         HStack(spacing: 10) {
-            AsyncImage(url: URL(string:user.avatar_url)){ phase in
-                if let image = phase.image {
-                    image
-                        .resizable()
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(.white, lineWidth: 4))
-                        .shadow(radius: 7)
-                        // Displays the loaded image.
-                    } else if phase.error != nil {
-                        Image(systemName: "person") // Indicates an error.
-                    } else {
-                        ProgressView() // Acts as a placeholder.
-                    }
-            }
-            .frame(width: 72, height: 72)
+            Avatar(avatar_url: user.avatar_url)
             Spacer()
-            Text(user.login).bold().font(.title)
+            Text(user.login)
+                .bold()
+                .font(.title)
+                .scaledToFit()
+                .minimumScaleFactor(0.5)
+        }
+    }
+}
+
+struct UserCell : View {
+    var user : User
+    var body: some View {
+        VStack(spacing: 10) {
+            Avatar(avatar_url: user.avatar_url)
+            Text(user.login)
+                .bold()
+                .font(.subheadline)
+                .scaledToFit()
+                .minimumScaleFactor(0.5)
         }
     }
 }
 
 struct UserRow_Previews: PreviewProvider {
     static var previews: some View {
-        UserRow(user: User(id: 1, login: "foowdewvded", avatar_url: "https://avatars.githubusercontent.com/u/1?v=4", repos_url: ""))
+        UserRow(user: User(id: 1, login: "realy realy long name that will scale ", avatar_url: "https://avatars.githubusercontent.com/u/1?v=4", repos_url: ""))
     }
 }
