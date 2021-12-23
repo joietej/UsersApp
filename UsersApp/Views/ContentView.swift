@@ -33,21 +33,40 @@ struct ContentView: View {
                 await store.loadUsers()
             }.navigationTitle("People").refreshable {
                 await store.loadUsers()
-            }.preferredColorScheme(.dark)
-        }.toolbar {
-            ToolbarItem(placement: .bottomBar) {
-                Toggle("Grid View", isOn: $isGridView)
             }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Toggle("Grid View", isOn: $isGridView)
+                }
+            }
+            .preferredColorScheme(.dark)
         }
     }
 }
 
 
 
-struct ContentView_Previews: PreviewProvider {
+struct ContentView_Previews:
+    PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .environmentObject(UserStore())
+        NavigationView {
+            List{
+                Text("Foo")
+                Text("Foo")
+                Text("Foo")
+                Text("Foo")
+                Text("Foo")
+            }.navigationTitle("Foo")
+                .toolbar {
+                    ToolbarItem(placement:.navigationBarLeading) {
+                        Text("One")
+                       
+                    }
+                    ToolbarItem(placement:.navigationBarTrailing) {
+                        Text("Two")
+                    }
+                }
+        }
         
     }
 }
