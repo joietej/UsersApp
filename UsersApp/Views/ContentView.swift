@@ -31,15 +31,16 @@ struct ContentView: View {
             }
             .task {
                 await store.loadUsers()
-            }.navigationTitle("People").refreshable {
+            }.navigationTitle("People")
+                .refreshable {
                 await store.loadUsers()
             }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Toggle("Grid View", isOn: $isGridView)
+                        .toggleStyle(.switch)
                 }
             }
-            .preferredColorScheme(.dark)
         }
     }
 }

@@ -14,6 +14,10 @@ struct UsersApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(store)
+                .foregroundColor(.mint)
+                .accentColor(.mint)
+                .tint(.mint)
+                .preferredColorScheme(.dark)
         }
     }
 }

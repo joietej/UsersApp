@@ -27,7 +27,8 @@ struct UserDetails : View {
                 Text(user.login).bold().font(.title)
                 List(repos, id: \.id){ repo in
                     HStack {
-                        Text(repo.name).bold()
+                        Link(repo.name, destination: URL(string: repo.html_url)!)
+                            .font(.subheadline)
                         Spacer()
                         Image(systemName: "star.fill").foregroundColor(.yellow)
                         Text("\(repo.stargazers_count)")
